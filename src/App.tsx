@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from "./components/Layout";
+import { ChakraProvider, Input, Box, Center, Button } from '@chakra-ui/react'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+        <Box minHeight="100vh" backgroundColor='#17A2B8' padding='20px'>
+          <Box backgroundColor='#FFFFFF' borderRadius='25px' padding='20px'>
+            <Center>
+              <h1>Faça o Login:</h1>
+            </Center>            
+            <Input placeholder="email"/>
+            <Input placeholder="password"/>
+            <Center>
+              <Button width='100%' colorScheme='blue' marginTop='10px'>
+                Entrar
+              </Button>
+            </Center>
+          </Box>
+        </Box>          
+    </ChakraProvider>
+    
   );
 }
 
