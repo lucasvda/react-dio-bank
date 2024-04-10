@@ -1,9 +1,17 @@
-import "./Header.css"
+import { Center, ChakraProvider, Heading } from "@chakra-ui/react"
 
-export const Header = () => {
+interface IHeader {
+    title: string
+}
+
+export const Header = ({title}: IHeader) => {
     return (
-        <div className="header">
-            <h1>Dio Bank</h1>
-        </div>
+        <ChakraProvider>            
+            <Heading as='h1' size='4xl' noOfLines={1}>
+                <Center bg='#17A2B8' color='#FFFFFF'>
+                    {title}
+                </Center>
+            </Heading>            
+        </ChakraProvider>
     )
 }
